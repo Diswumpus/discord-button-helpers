@@ -1,0 +1,29 @@
+{
+  "name": "discord-button-helpers",
+  "version": "2.0.0",
+  "description": "Just a package to help make buttons!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diswumpus/discord-button-helpers.git"
+  },
+  "keywords": [
+    "discord.js",
+    "discord.js-buttons",
+    "discord-buttons",
+    "discord",
+    "discordjs"
+  ],
+  "author": "Turtlepaw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Diswumpus/discord-button-helpers/issues"
+  },
+  "homepage": "https://github.com/Diswumpus/discord-button-helpers#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
+}
