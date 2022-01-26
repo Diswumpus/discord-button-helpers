@@ -1,30 +1,31 @@
 const Discord = require("discord.js");
+const { ButtonRow } = require("..");
+const ButtonError = require("../ButtonError");
 
-/**
- * Sets all the buttons in that row or array disabled.
- * @param {Discord.MessageActionRow|Discord.MessageButton[]} buttons 
- * @returns {Discord.MessageButton[]}
- */
-module.exports.disabled = (buttons) => {
-    if(buttons?.components != null) buttons = buttons.components;
-
-    for(const button of buttons){
-        button.setDisabled(true);
-    }
-
-    return buttons;
+module.exports.check = async (buttons) => {
+    if(!buttons) throw new ButtonError(
+        `buttons cannot be null`,
+        ButtonError.Errors.INVALID_ARG
+    );
+    if(!Array.isArray(buttons)) throw new ButtonError(
+        `buttons must be an array of MessageButtons`,
+        ButtonError.Errors.INVALID_ARG
+    );
+    if(!(buttons instanceof [Discord.MessageButton])) throw new ButtonError(
+        `buttons must be a MessageButton`,
+        ButtonError.Errors.INVALID_ARG
+    );
 }
-
 /**
- * Sets all the buttons in that row or array __*not*__ disabled.
- * @param {Discord.MessageActionRow|Discord.MessageButton[]} buttons 
+ * Sets all the buttons in that row or array disabled or not disabled.
+ * @param {Discord.MessageButton[]} buttons 
  * @returns {Discord.MessageButton[]}
  */
- module.exports.undo = (buttons) => {
-    if(buttons?.components != null) buttons = buttons.components;
+module.exports = (buttons, disabled=true) => {
+    await this.check();
 
     for(const button of buttons){
-        button.setDisabled(false);
+        button.setDisabled(disabled);
     }
 
     return buttons;

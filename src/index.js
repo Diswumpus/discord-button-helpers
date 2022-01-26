@@ -1,12 +1,13 @@
 //Require files
-const { disabled, undo } = require("./functions/setAll");
+const setButtons = require("./functions/setAll");
 const createLinkButton = require("./functions/createLinkButton");
 const createButton = require("./functions/createButton");
+const ButtonRow = require("./classes/ButtonRow");
 
 //Export all files
 module.exports = {
-    disableAllButtons: disabled,
-    unDisableAllButtons: undo,
+    setButtons,
     createButton,
-    createLinkButton
+    createLinkButton,
+    ButtonRow
 };
