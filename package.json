@@ -1,6 +1,6 @@
 {
   "name": "discord-button-helpers",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Just a package to help make buttons!",
   "main": "index.js",
   "scripts": {
